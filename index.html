@@ -1,494 +1,88 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
-	<title>Portafolio</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/bootstrap.css" />
-	<link rel="stylesheet" href="css/font-awesome.min.css" />
-	<link rel="stylesheet" href="css/linea-icon.css" />
-	<link rel="stylesheet" href="css/fancy-buttons.css" />
-	<!--=== Google Fonts ===-->
-	<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700,400' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Raleway:600,400,300' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-	<!--=== Other CSS files ===-->
-	<link rel="stylesheet" href="css/animate.css" />
-	<link rel="stylesheet" href="css/jquery.vegas.css" />
-	<link rel="stylesheet" href="css/baraja.css" />
-	<link rel="stylesheet" href="css/jquery.bxslider.css" />
-	<!--=== Main Stylesheets ===-->
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/responsive.css" />
-	<!--=== Color Scheme, three colors are available red.css, orange.css and gray.css ===-->
-	<link rel="stylesheet" id="scheme-source" href="css/schemes/orange.css" />
-	<!--=== Internet explorer fix ===-->
-	<!-- [if lt IE 9]>
-		<script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif] -->
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139874884-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'UA-139874884-1');
-	</script>
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduardo Linares | ERP & AI Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+<body class="bg-[#0f172a] text-gray-300 font-sans leading-normal">
 
-<body>
-	<!--=== Preloader section starts ===-->
-	<section id="preloader">
-		<div class="loading-circle fa-spin center"></div>
-	</section>
-	<!--=== Preloader section Ends ===-->
-	<!--=== Header section Starts ===-->
-	<div id="header" class="header-section">
-		<!-- sticky-bar Starts-->
-		<div class="sticky-bar-wrap">
-			<div class="sticky-section">
-				<div id="topbar-hold" class="nav-hold container">
-					<nav class="navbar" role="navigation">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-								data-target=".navbar-responsive-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<!--=== Site Name ===-->
-							<a class="site-name navbar-brand" href="#"><span>E</span>duardo Linares</a>
-						</div>
-						<!-- Main Navigation menu Starts -->
-						<div class="collapse navbar-collapse navbar-responsive-collapse">
-							<ul class="nav navbar-nav navbar-right">
-								<li class="current"><a href="#section-home">Inicio</a></li>
-								<li><a href="#section-resumen">Resumen</a></li>
-								<li><a href="#step-habilidades">Habilidades</a></li>
-								<li><a href="#section-portafolio">Portafolio</a></li>
-								<li><a href="#section-pricing">Cursos</a></li>
-								<li><a href="#section-contacto">Contacto</a></li>
-							</ul>
-						</div>
-						<!-- Main Navigation menu ends-->
-					</nav>
-				</div>
-			</div>
-		</div>
-		<!-- sticky-bar Ends-->
-		<!--=== Header section Ends ===-->
-		<!--=== Home Section Starts ===-->
-		<div id="section-home" class="home-section-wrap center">
-			<div class="section-overlay"></div>
-			<div class="container home">
-				<div class="row">
-					<h1 class="well-come"> Eduardo Linares </h1>
-					<div class="col-md-8 col-md-offset-2">
-						<p class="intro-message">Portafolio</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--=== Home Section Ends ===-->
-	</div>
+    <nav class="bg-[#0f172a]/80 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-bold text-xl tracking-tight text-white uppercase">LINARES<span class="text-blue-500">.IT</span></span>
+            <div class="space-x-6 text-sm font-medium">
+                <a href="#proyectos" class="hover:text-blue-400 transition text-gray-400">Proyectos</a>
+                <a href="https://github.com/linares-it" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github fa-lg"></i></a>
+            </div>
+        </div>
+    </nav>
 
-	<!--=== Services section Ends ===-->
-	<section id="section-resumen" class="step-even step-wrap">
-		<div class="container pricing">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1 center section-title">
-					<h3>Resumen</h3>
-				</div>
-				<div class="col-md-12">
-					<p ALIGN="justify">Analista de Sistemas con alta capacidad analítica, buen dominio informático y
-						tecnológico,
-						con gran capacidad de aprendizaje y aplicación de nuevas herramientas.
-						Me considero una persona positiva y con mucha actitud proactiva. Soy claro y preciso en mis
-						planteamientos,
-						soy sistemático, planificado y organizado en el cumplimiento de plazos</p>
+    <header class="py-24 bg-gradient-to-b from-[#0f172a] to-[#1e293b] border-b border-gray-800">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Eduardo Linares</h1>
+            <p class="text-lg text-blue-400 font-bold mb-4 uppercase tracking-[0.2em]">Consultor Senior ERP & Arquitecto de IA</p>
+            <p class="text-lg text-gray-400 mb-10 leading-relaxed">
+                Especialista en optimización de procesos de negocio mediante la convergencia de sistemas <strong>SAP/ERPNext</strong> y arquitecturas de <strong>IA Generativa</strong>. Transformo datos empresariales en activos estratégicos con soberanía y eficiencia.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="mailto:tu-email@ejemplo.com" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-500 transition shadow-lg shadow-blue-900/20">Contactar</a>
+                <a href="#proyectos" class="bg-gray-800 text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-700 transition border border-gray-700">Portafolio</a>
+            </div>
+        </div>
+    </header>
 
-				</div>
-			</div>
-		</div>
-	</section>
+    <section class="py-16 max-w-5xl mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 bg-[#1e293b] rounded-2xl border border-gray-800 hover:border-blue-500/50 transition group">
+                <div class="text-blue-500 mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-chart-line fa-2x"></i></div>
+                <h3 class="font-bold text-xl text-white mb-3">Consultoría ERP</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Implementación y optimización en SAP S/4HANA (ABAP) y ERPNext. Diseño de flujos de trabajo de alto impacto corporativo.</p>
+            </div>
+            <div class="p-8 bg-[#1e293b] rounded-2xl border border-gray-800 hover:border-blue-500/50 transition group">
+                <div class="text-blue-500 mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-robot fa-2x"></i></div>
+                <h3 class="font-bold text-xl text-white mb-3">IA Generativa</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Arquitecturas RAG avanzadas con LangChain. Foco en soberanía de datos, privacidad y automatización inteligente.</p>
+            </div>
+            <div class="p-8 bg-[#1e293b] rounded-2xl border border-gray-800 hover:border-blue-500/50 transition group">
+                <div class="text-blue-500 mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-network-wired fa-2x"></i></div>
+                <h3 class="font-bold text-xl text-white mb-3">Integraciones</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Puentes de datos seguros entre sistemas legados, automatización con PowerShell y despliegues críticos.</p>
+            </div>
+        </div>
+    </section>
 
-	<section id="section-feature" class="feature-wrap">
-		<div class="container features center">
-			<div class="row">
-				<div class="col-lg-12"> <img src="images/blank.jpg" alt="" style="opacity:0;" class="feature-image" />
-				</div>
-			</div>
+    <section id="proyectos" class="py-20 bg-[#0f172a]">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white mb-12 flex items-center">
+                <span class="w-12 h-1 bg-blue-600 mr-4"></span> Proyectos Estratégicos
+            </h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-[#1e293b] overflow-hidden rounded-2xl border border-gray-800 hover:shadow-2xl hover:shadow-blue-900/20 transition group">
+                    <div class="p-8">
+                        <span class="text-xs font-black text-blue-500 uppercase tracking-widest">IA & RAG</span>
+                        <h3 class="text-2xl font-bold text-white mt-3 mb-4">Laboratorio RAG Local</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Servidor de IA privado que permite consultar documentación empresarial sin exponer datos a la nube. Basado en Llama 3.2 y LangChain.</p>
+                        <a href="https://github.com/linares-it/demo-laboratorio-rag-langchain" class="inline-flex items-center text-blue-400 font-bold text-sm hover:text-blue-300 transition">
+                            EXPLORAR REPOSITORIO <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-[#1e293b] overflow-hidden rounded-2xl border border-gray-800 hover:shadow-2xl hover:shadow-blue-900/20 transition group">
+                    <div class="p-8">
+                        <span class="text-xs font-black text-blue-500 uppercase tracking-widest">Seguridad Biométrica</span>
+                        <h3 class="text-2xl font-bold text-white mt-3 mb-4">Auditoría de Identidad</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Solución de visión artificial para validación de identidad facial, integrada en flujos de check-in y control de accesos ERP.</p>
+                        <a href="https://github.com/linares-it/auditoria-identidad-biometrica" class="inline-flex items-center text-blue-400 font-bold text-sm hover:text-blue-300 transition">
+                            EXPLORAR REPOSITORIO <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-		</div>
-	</section>
-	<!--=== Step-1 section Starts ===-->
-	<!--=== Step-1 section Ends ===-->
-	<!--=== Step-2 section Starts ===-->
-	<section id="step-habilidades" class="step-even step-wrap">
-		<div class="container step animated" data-animation="bounceInRight" data-animation-delay="700">
-			<div class="row">
-				<div class="col-md-12">
-
-					<!-- Habilidades-->
-					<div class="col-md-4">
-						<h3>Habilidades</h3>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-60 titulo1">Integración y Desarrollo de sistemas
-								</div>
-								<p class="porcentaje">60%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-60 titulo1">Procesos de Negocio</div>
-								<p class="porcentaje">60%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-80 titulo1">Trabajo en Equipo</div>
-								<p class="porcentaje">80%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-70 titulo1">Organización</div>
-								<p class="porcentaje">70%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-50 titulo1">Comunicación</div>
-								<p class="porcentaje">50%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-70 titulo1">Análisis</div>
-								<p class="porcentaje">70%</p>
-							</div>
-						</div>
-					</div>
-					<!-- Programacion-->
-					<div class="col-md-4">
-						<h3>Programación</h3>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-30 titulo1">CSS</div>
-								<p class="porcentaje">30%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-60 titulo1">PHP</div>
-								<p class="porcentaje">60%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-30 titulo1">JQuery</div>
-								<p class="porcentaje">30%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-20 titulo1">JavaScript</div>
-								<p class="porcentaje">20%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-50 titulo1">Java</div>
-								<p class="porcentaje">50%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-60 titulo1">C#</div>
-								<p class="porcentaje">60%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-70 titulo1">ABAP</div>
-								<p class="porcentaje">70%</p>
-							</div>
-						</div>
-					</div>
-					<!-- Framework-->
-					<div class="col-md-4">
-						<h3>Frameworks</h3>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-60 titulo1">ASP NET MVC</div>
-								<p class="porcentaje">60%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-60 titulo1">NodeJS/Express</div>
-								<p class="porcentaje">10%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-50 titulo1">SAP Fiori OpenUI5</div>
-								<p class="porcentaje">50%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-80 titulo1">Bootstrap</div>
-								<p class="porcentaje">80%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-40 titulo1">Laravel</div>
-								<p class="porcentaje">40%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-40 titulo1">Spring-boot</div>
-								<p class="porcentaje">40%</p>
-							</div>
-						</div>
-						<div class="progressBar">
-							<div class="progressBarContainer">
-								<div class="progressBarValue value-40 titulo1">Ruby & Rails</div>
-								<p class="porcentaje">40%</p>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-		</div>
-	</section>
-	<!--=== Step-2 section Ends ===-->
-
-	<!--=== PORTAFOLIOS section Starts ===-->
-	<section id="section-portafolio" class="feature-wrap">
-		<div class="container features center">
-			<div class="row">
-				<p class="titulo2">Portafolios</p>
-				<HR width=25% align="center"><br>
-				<div class="col-lg-12">
-					<!--Features container Starts -->
-					<ul id="card-ul" class="features-hold baraja-container">
-						<!-- Single Feature Starts -->
-						<li class="single-feature" title="pinterest">
-							<a href="https://pinterest-demo-app.herokuapp.com/" target="_blank">
-								<img src="images/clone-pinterest.png" alt="Ruby" class="feature-image" />
-								<!-- Feature Icon -->
-							</a>
-							<h4 class="feature-title color-scheme">Ruby & Rails</h4>
-							<p class="feature-text">
-								Clon Pinterest <br>
-								Programador
-								Ruby & Rails
-							</p>
-						</li>
-						<!-- Single Feature Ends -->
-						<!-- Single Feature Starts -->
-						<li class="single-feature" title="MailChimp Ready">
-							<a href="https://campus-demo.herokuapp.com/" target="_blank">
-								<img src="images/sis-gestion-incidentes.png" alt="Laravel" class="feature-image" />
-								<!-- Feature Icon -->
-							</a>
-							<h4 class="feature-title color-scheme">Php Laravel</h4>
-							<p class="feature-text">
-								Sistema de gestión de incidentes <br>
-								Programador
-								PHP/Laravel/css/Jquery <br>
-							</p>
-						</li>
-						<!-- Single Feature Starts -->
-						<li class="single-feature" title="Card style">
-							<img src="images/Winforms.png" alt="WindowsForm" class="feature-image" />
-							<!-- Feature Icon -->
-							<h4 class="feature-title color-scheme">Windows Forms</h4>
-							<p class="feature-text">
-								Sistema de gestión servicio Técnico <br>
-								Programador <br>
-								C# <br>
-							</p>
-
-						</li>
-						<!-- Single Feature Ends -->
-						<!-- Single Feature Ends -->
-						<!-- Single Feature Starts -->
-						<li class="single-feature" title="4 home style">
-							<a href="https://eduardo-linares.herokuapp.com/" target="_blank">
-								<img src="images/odoo.png" alt="odoo" class="feature-image" /><!-- Feature Icon -->
-							</a>
-							<h4 class="feature-title color-scheme">Odoo</h4>
-							<p class="feature-text">
-								Módulo de Reparaciones <br>
-								Analista <br>
-								<br>
-							</p>
-						</li>
-						<!-- Single Feature Ends -->
-
-					</ul>
-					<!--Features container Ends -->
-					<!-- Features Controls Starts -->
-					<div class="features-control relative">
-						<button class="control-icon fancy-button button-line no-text btn-col bell" id="feature-prev"
-							title="Previous">
-							<span class="icon">
-								<i class="fa fa-arrow-left"></i>
-							</span>
-						</button>
-						<button class="control-icon fancy-button button-line no-text btn-col zoom" id="feature-expand"
-							title="Expand">
-							<span class="icon">
-								<i class="fa fa-expand"></i>
-							</span>
-						</button>
-						<button class="control-icon fancy-button button-line no-text btn-col zoom" id="feature-close"
-							title="Collapse">
-							<span class="icon">
-								<i class="fa fa-compress"></i>
-							</span>
-						</button>
-						<button class="control-icon fancy-button button-line no-text btn-col bell" id="feature-next"
-							title="Next">
-							<span class="icon">
-								<i class="fa fa-arrow-right"></i>
-							</span>
-						</button>
-					</div>
-					<!-- Features Controls Ends -->
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--=== Features section Ends ===-->
-	<!--=== Pricing section Starts ===-->
-	<section id="section-pricing" class="pricing-wrap">
-		<div class="container pricing">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1 center section-title">
-					<h3>Certificaciones y Cursos</h3>
-				</div>
-				<div class="col-md-6">
-					<p class="titulo1">Certificaciones</p>
-					<p>ITIL® V3 Foundation</p>
-					<p>NetWeaver-ABAP Web AS 6.40</p>
-				</div>
-				<div class="col-md-6">
-					<p class="titulo1">Otro Cursos</p>
-					<p>TOEIC.</p>
-					<p>Introducción a RUBY </p>
-					<p>BPMN.</p>
-					<p>Gestión de Proyectos con PmBok.</p>
-				</div>
-				<div class="col-md-12">
-					<HR width=100% align="center">
-				</div>
-				<div class="col-md-6">
-					<p class="titulo1">Cursos Currículo SAP</p>
-					<p>TAW10_54 ABAP Workbench Fundamental. </p>
-					<p>TAW12_52 ABAP Workbench Concepts. </p>
-					<p>TBIT40 SAP NetWeaver Process Integration. </p>
-					<p>SCM630 Warehouse Management. </p>
-					<p>SCM631 Additional Topics in Warehouse Management. </p>
-					<p>SMI210 SAP Solution Manager Implementation Methodology Overview.</p>
-					<p>SMI310 SAP Solution Manager Implementation Tools in Detail.</p>
-					<p>IHE203 Student Lifecycle Management – Student Accounting. </p>
-					<p>SCM600 Business Processes in Sales Order Management . </p>
-					<HR width=90% align="center">
-				</div>
-		
-			</div>
-		</div>
-	</section>
-	<!--=== Pricing section Ends ===-->
-
-	<!--=== Footer section Starts ===-->
-	<div id="section-footer" class="footer-wrap">
-		<div id="section-contacto"class="contenedor">
-			<div class="footer center row">
-				<div class="contacto">
-					<div class="col-lg-12">
-						<h4 class="footer-title">
-							<!-- Footer Title -->
-							<a class="site-name" href="#"><span>E</span>duardo Linares</a>
-						</h4>
-						<!-- Social Links -->
-						<div class="social-icons">
-							<ul>
-								<li><a href="https://github.com/eduardolinaresp"><i class="fa fa-github-square"></i></a>
-								</li>
-								<li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-								<li><a href="#"><i class="fa fa-reddit-square"></i></a></li>
-								<li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
-							</ul>
-						</div>
-						<p class="copyright"></p>
-					</div>
-				</div>							
-				<form action="https://formsubmit.co/ef02ee116666f3753abcf10644c14dc6" method="POST">
-			    
-						<div class="form-group">
-							<label for="subject">Asunto</label>
-							<input type="text" class="form-control" id="subject" name="subject"
-								placeholder="Ingresa tu mensaje">
-						</div>
-						<div class="form-group">
-							<label for="email">Tu email </label>
-							<input type="email" class="form-control" id="email" name="email"
-								placeholder="Ingresa tu email">
-						</div>
-						<div class="form-group">
-							<label for="message">Tu mensaje</label>
-							<textarea class="form-control" id="message" name="message" rows="4"></textarea>
-						</div>
-						<button type="submit" class="btn btn-primary btn-lg btn-block">Enviar mensaje!</button>
-				</form>						
-			</div>
-		</div>
-	</div>
-	<!--=== Footer section Ends ===-->
-	<!--==== Js files ====-->
-	<!--==== Essential files ====-->
-	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
-	<script type="text/javascript" src="js/modernizr.js"></script>
-	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-
-	<!--==== Slider and Card style plugin ====-->
-	<script type="text/javascript" src="js/jquery.baraja.js"></script>
-	<script type="text/javascript" src="js/jquery.vegas.min.js"></script>
-	<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
-
-	<!--==== MailChimp Widget plugin ====-->
-	<script type="text/javascript" src="js/jquery.ajaxchimp.min.js"></script>
-
-	<!--==== Scroll and navigation plugins ====-->
-	<script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
-	<script type="text/javascript" src="js/jquery.nav.js"></script>
-	<script type="text/javascript" src="js/jquery.appear.js"></script>
-	<script type="text/javascript" src="js/jquery.fitvids.js"></script>
-
-	<!--==== Custom Script files ====-->
-	<script type="text/javascript" src="js/custom.js"></script>
-
-</body>
-
-</html>
+    <footer class="py-16 bg-[#0f172a] border-t border-gray-800">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <p class="text-
