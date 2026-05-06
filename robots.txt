@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Evitar indexar archivos técnicos
+Disallow: /_config.yml
+Disallow: /CNAME
+
+# Ubicación del Sitemap
+Sitemap: https://linares-it.github.io/sitemap.xml
