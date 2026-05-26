@@ -1,7 +1,0 @@
-model: gemini/gemini-3-flash-preview
-read:
-  - agent.md
-  - skills/diseno.md
-  - landing-page.spec.md
-auto-commits: false
-dark-mode: true
