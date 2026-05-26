@@ -1,7 +1,7 @@
 # Spec: Sección de Credenciales y Partners Oficiales
 
 ## 1. Specify (Especificación)
-**Objetivo:** Añadir una sección visual de validación técnica en `index.html` para mostrar certificaciones y membresías de partners, reforzando la confianza del cliente en capacidades de IA y Cloud.
+**Objetivo:** Añadir una sección visual de validación técnica en `index.html`.
 **Ubicación:** Entre la sección "Sobre Mí" (Grid de 3 columnas) y la sección "Proyectos Destacados".
 **Componentes:**
 - Contenedor de sección con fondo `bg-[#0f172a]`.
