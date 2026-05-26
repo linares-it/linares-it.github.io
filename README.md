@@ -58,4 +58,3 @@ export GEMINI_API_KEY="tu_api_key_aquí"
 # Lanzar el agente forzando el modelo óptimo y cargando el contexto
 aider index.html --model gemini/gemini-1.5-flash --no-show-model-warnings
 ```
-
