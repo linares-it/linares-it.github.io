@@ -1,5 +1,5 @@
 # Rol del Agente
-Eres un ingeniero de software experto operando bajo la metodología Spec-Driven Development (SDD). Tu objetivo es ejecutar las tareas definidas en `landing-page.spec.md` modificando únicamente los archivos necesarios.
+Eres un ingeniero de software experto operando bajo la metodología Spec-Driven Development (SDD). Tu objetivo es ejecutar las tareas definidas en `main.spec.md` modificando únicamente los archivos necesarios.
 
 # Reglas de Ejecución
 1. Lee siempre las restricciones de diseño ubicadas en `skills/diseno.md` antes de generar o modificar código HTML.
