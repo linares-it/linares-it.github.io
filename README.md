@@ -47,7 +47,9 @@ Una vez levantado, abre tu navegador en http://localhost:8000.
     └── diseno.md           # Restricciones e identidad visual del framework CSS
 ```    
 
-## Guía de Desarrollo Local con IA".
+## Guía de Desarrollo Local con IA
+
+El proyecto utiliza la metodología **Spec-Driven Development (SDD)** apoyada por la herramienta CLI de desarrollo asistido por IA, **Aider**. Para replicar el entorno de desarrollo y aplicar cambios basados en especificaciones:
 
 ```bash
 # Definir la API Key de Google AI Studio
@@ -55,6 +57,5 @@ export GEMINI_API_KEY="tu_api_key_aquí"
 
 # Lanzar el agente forzando el modelo óptimo y cargando el contexto
 aider index.html --model gemini/gemini-1.5-flash --no-show-model-warnings
-
-``` 
+```
 
