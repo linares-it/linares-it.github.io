@@ -56,5 +56,7 @@ El proyecto utiliza la metodología **Spec-Driven Development (SDD)** apoyada po
 export GEMINI_API_KEY="tu_api_key_aquí"
 
 # Lanzar el agente forzando el modelo óptimo y cargando el contexto
-aider index.html --model gemini/gemini-1.5-flash --no-show-model-warnings
+aider index.html --model gemini/gemini-3-flash-preview --no-show-model-warnings
+
+aider --architect --model gemini/gemini-3-flash-preview --editor-model gemini/gemini-3-flash-preview specs/landing/credentials.spec.md --no-show-model-warnings
 ```
