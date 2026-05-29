@@ -37,14 +37,30 @@ Una vez levantado, abre tu navegador en http://localhost:8000.
 
 # 📂 Estructura del Proyecto
 ```text
+linares-it.github.io/
 ├── .aider.conf.yml         # Configuración del agente de desarrollo local
-├── agent.md                # Reglas de comportamiento para LLMs en el repositorio
-├── index.html              # Archivo principal de la landing page
-├── landing-page.spec.md    # Registro de especificaciones técnicas (SDD)
 ├── robots.txt              # Configuración de indexación para SEO técnico
 ├── sitemap.xml             # Mapa del sitio para motores de búsqueda
-└── skills/
-    └── diseno.md           # Restricciones e identidad visual del framework CSS
+├── index.html              # Archivo principal de la landing page
+├── PRD.md                  # visión macro, solo lectura agente
+├── README.md               # Vision macro, usuarios
+├── agent.md                # Reglas de comportamiento para LLMs en el
+├── skills/
+│   └── diseno.md           # Restricciones e identidad visual del framework
+└── specs/
+    ├── landing/
+	│   ├── landing.main.spec.md
+    │   ├── hero.spec.md            
+    │   ├── proyectos.spec.md
+	│	├── contacto.spec.md
+    │   └── footer.spec.md
+    ├── proyectos/
+    │   ├── proyectos.main.spec.md  ← template HTML proyectos
+    │   ├── auditoria-biometrica.spec.md
+    │   └── agente-ia.spec.md
+    └── certificaciones/
+	    ├── certificaciones.main.spec.md	
+        └── cloud-path.spec.md      ← FREEZE: no generar HTML
 ```    
 
 ## Guía de Desarrollo Local con IA
@@ -60,3 +76,13 @@ aider index.html --model gemini/gemini-3-flash-preview --no-show-model-warnings
 
 aider --architect --model gemini/gemini-3-flash-preview --editor-model gemini/gemini-3-flash-preview specs/landing/credentials.spec.md --no-show-model-warnings
 ```
+
+## 📋 Arquitectura Documental (Top-Down)
+
+1. **PRD.md** — Visión de producto y alcance (solo lectura para agentes)
+2. **main.spec.md** — Especificación técnica ejecutable (SDD)
+3. **agent.md** — Reglas de comportamiento para LLMs
+4. **.spec-template.md** — Plantilla para nuevas specs
+
+## Flujo: 
+Lee PRD → Entiende alcance → Consulta main.spec.md → Respeta agent.md → Ejecuta cambios.
