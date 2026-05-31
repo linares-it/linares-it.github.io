@@ -2,13 +2,23 @@ name: Update project health data
 
 on:
   schedule:
-    - cron: '0 11 * * *'   # 08:00 Santiago (UTC-3)
-  workflow_dispatch:        # ejecución manual desde Actions tab
+    - cron: '0 11 * * *'
+  workflow_dispatch:
 
 jobs:
   update-gist:
     runs-on: ubuntu-latest
     steps:
+      # ── STEP 1: checkout (necesario para acceder a test/) ──
+      - uses: actions/checkout@v4
+
+      # ── STEP 2: tests — si falla, se detiene aquí ──
+      - name: Run pytest
+        run: |
+          pip install -r test/python/requirements.txt --quiet
+          pytest test/python/ -v
+
+      # ── STEP 3: solo corre si los tests pasaron ──
       - name: Generate real health data from GitHub API
         env:
           GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
@@ -31,7 +41,25 @@ jobs:
                   return text
               return text[:max_chars].rsplit(' ', 1)[0] + '…'
 
-          # 1. obtener todos los repos públicos del perfil
+          def calc_health(days_since, open_issues):
+              if days_since == 999:
+                  return "red"
+              if days_since <= 30 and open_issues < 5:
+                  return "green"
+              elif days_since <= 90 or open_issues <= 15:
+                  return "yellow"
+              else:
+                  return "red"
+
+          def calc_status(days_since):
+              if days_since <= 7:   return "active"
+              elif days_since <= 60: return "maintenance"
+              else:                  return "inactive"
+
+          def calc_progress(open_issues, stars):
+              total = max(open_issues + stars, 1)
+              return max(0, min(100, 100 - int((open_issues / total) * 100)))
+
           repos_raw = requests.get(
               f"https://api.github.com/users/{USERNAME}/repos?per_page=100&sort=updated",
               headers=HEADERS
@@ -45,47 +73,26 @@ jobs:
               open_issues = repo["open_issues_count"]
               pushed_at   = repo.get("pushed_at")
 
-              # días desde el último push
               if pushed_at:
                   last_push  = datetime.fromisoformat(pushed_at.replace("Z", "+00:00"))
                   days_since = (NOW - last_push).days
               else:
                   days_since = 999
 
-              # progreso aproximado: % de issues resueltas vs total estimado
-              total_issues = max(open_issues + stars, 1)
-              progress     = max(0, min(100, 100 - int((open_issues / total_issues) * 100)))
-
-              # regla de health
-              if days_since <= 30 and open_issues < 5:
-                  health = "green"
-              elif days_since <= 90 or open_issues <= 15:
-                  health = "yellow"
-              else:
-                  health = "red"
-
-              # status legible
-              if days_since <= 7:
-                  status = "active"
-              elif days_since <= 60:
-                  status = "maintenance"
-              else:
-                  status = "inactive"
-
               projects.append({
-                  "id":           f"REPO-{len(projects)+1:03d}",
-                  "title":        truncate(description, 60),
-                  "titleFull":    description,
-                  "repoName":     name,
-                  "repoUrl":      repo["html_url"],
-                  "health":       health,
-                  "status":       status,
-                  "progress":     progress,
-                  "stars":        stars,
-                  "openIssues":   open_issues,
+                  "id":            f"REPO-{len(projects)+1:03d}",
+                  "title":         truncate(description, 60),
+                  "titleFull":     description,
+                  "repoName":      name,
+                  "repoUrl":       repo["html_url"],
+                  "health":        calc_health(days_since, open_issues),
+                  "status":        calc_status(days_since),
+                  "progress":      calc_progress(open_issues, stars),
+                  "stars":         stars,
+                  "openIssues":    open_issues,
                   "daysSincePush": days_since,
-                  "language":     repo.get("language") or "—",
-                  "owner":        USERNAME,
+                  "language":      repo.get("language") or "—",
+                  "owner":         USERNAME,
               })
 
           payload = {
@@ -95,7 +102,6 @@ jobs:
               "projects":    projects
           }
 
-          # actualizar el Gist
           response = requests.patch(
               f"https://api.github.com/gists/{GIST_ID}",
               headers=HEADERS,
