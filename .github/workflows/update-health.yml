@@ -1,0 +1,110 @@
+name: Update project health data
+
+on:
+  schedule:
+    - cron: '0 11 * * *'   # 08:00 Santiago (UTC-3)
+  workflow_dispatch:        # ejecución manual desde Actions tab
+
+jobs:
+  update-gist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate real health data from GitHub API
+        env:
+          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+          GH_USERNAME: linares-it
+        run: |
+          pip install requests --quiet
+          python3 << 'PYEOF'
+          import requests, json, os
+          from datetime import datetime, timezone
+
+          TOKEN    = os.environ["GIST_TOKEN"]
+          USERNAME = os.environ["GH_USERNAME"]
+          GIST_ID  = os.environ["GIST_ID"]
+          HEADERS  = {"Authorization": f"token {TOKEN}", "Accept": "application/vnd.github+json"}
+          NOW      = datetime.now(timezone.utc)
+
+          def truncate(text, max_chars=60):
+              if len(text) <= max_chars:
+                  return text
+              return text[:max_chars].rsplit(' ', 1)[0] + '…'
+
+          # 1. obtener todos los repos públicos del perfil
+          repos_raw = requests.get(
+              f"https://api.github.com/users/{USERNAME}/repos?per_page=100&sort=updated",
+              headers=HEADERS
+          ).json()
+
+          projects = []
+          for repo in repos_raw:
+              name        = repo["name"]
+              description = repo.get("description") or name
+              stars       = repo["stargazers_count"]
+              open_issues = repo["open_issues_count"]
+              pushed_at   = repo.get("pushed_at")
+
+              # días desde el último push
+              if pushed_at:
+                  last_push  = datetime.fromisoformat(pushed_at.replace("Z", "+00:00"))
+                  days_since = (NOW - last_push).days
+              else:
+                  days_since = 999
+
+              # progreso aproximado: % de issues resueltas vs total estimado
+              total_issues = max(open_issues + stars, 1)
+              progress     = max(0, min(100, 100 - int((open_issues / total_issues) * 100)))
+
+              # regla de health
+              if days_since <= 30 and open_issues < 5:
+                  health = "green"
+              elif days_since <= 90 or open_issues <= 15:
+                  health = "yellow"
+              else:
+                  health = "red"
+
+              # status legible
+              if days_since <= 7:
+                  status = "active"
+              elif days_since <= 60:
+                  status = "maintenance"
+              else:
+                  status = "inactive"
+
+              projects.append({
+                  "id":           f"REPO-{len(projects)+1:03d}",
+                  "title":        truncate(description, 60),
+                  "titleFull":    description,
+                  "repoName":     name,
+                  "repoUrl":      repo["html_url"],
+                  "health":       health,
+                  "status":       status,
+                  "progress":     progress,
+                  "stars":        stars,
+                  "openIssues":   open_issues,
+                  "daysSincePush": days_since,
+                  "language":     repo.get("language") or "—",
+                  "owner":        USERNAME,
+              })
+
+          payload = {
+              "lastUpdated": NOW.strftime("%Y-%m-%dT%H:%M:%SZ"),
+              "username":    USERNAME,
+              "totalRepos":  len(projects),
+              "projects":    projects
+          }
+
+          # actualizar el Gist
+          response = requests.patch(
+              f"https://api.github.com/gists/{GIST_ID}",
+              headers=HEADERS,
+              json={"files": {"health-data.json": {"content": json.dumps(payload, indent=2)}}}
+          )
+
+          if response.status_code == 200:
+              print(f"✅ Gist actualizado con {len(projects)} repos")
+          else:
+              print(f"❌ Error {response.status_code}: {response.text}")
+              exit(1)
+          PYEOF
