@@ -7,10 +7,17 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <meta name="description"
+        content="Consultor SAP ABAP Senior | Especialista en S/4HANA, Clean Core, Fiori Elements, RAP, OData e Inteligencia Artificial aplicada (RAG, Agentes Autónomos, IA Local).">
+    <meta name="keywords"
+        content="SAP ABAP, S/4HANA, Clean Core, Fiori Elements, SAP RAP, OData, Fiori, Python, LangChain, RAG, Inteligencia Artificial, Mantenimiento Predictivo, Consultor SAP Chile, ABAP Senior">
     <title>Eduardo Linares | ERP & AI </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="module" src="src/components/DashboardSAP.js"></script>
 </head>
+
+
 
 <body class="bg-[#0f172a] text-gray-300 font-sans leading-normal">
 
@@ -29,9 +36,11 @@
 
     <header class="py-24 bg-gradient-to-b from-[#0f172a] to-[#1e293b] border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Consultor ABAP Senior & Arquitecto de Soluciones IA</h1>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Consultor ABAP Senior & Arquitecto de
+                Soluciones IA</h1>
             <p class="text-lg text-gray-400 mb-10 leading-relaxed">
-                Especializado en la modernización de sistemas empresariales bajo estrategia <strong>Clean Core</strong> y el diseño de arquitecturas de Inteligencia Artificial locales y agénticas.
+                Especializado en la modernización de sistemas empresariales bajo estrategia <strong>Clean Core</strong>
+                y el diseño de arquitecturas de Inteligencia Artificial locales y agénticas.
             </p>
             <div class="flex justify-center gap-4">
                 <a href="#contacto"
@@ -42,25 +51,29 @@
         </div>
     </header>
 
-    <section class="py-16 max-w-5xl mx-auto px-6">
+    <section id="especialidades" class="py-16 max-w-5xl mx-auto px-6">
         <div class="grid md:grid-cols-3 gap-6">
             <div class="p-8 bg-[#1e293b] rounded-2xl border border-gray-800 hover:border-blue-500/50 transition group">
                 <div class="text-blue-500 mb-4 group-hover:scale-110 transition-transform"><i
                         class="fas fa-database fa-2x"></i></div>
                 <h3 class="font-bold text-xl text-white mb-3">Modernización SAP</h3>
-                <p class="text-sm text-gray-400 leading-relaxed">Evolución del código hacia el paradigma Clean Core mediante SAP RAP. Exposición de lógica de negocio limpia vía OData y Fiori Elements.</p>
+                <p class="text-sm text-gray-400 leading-relaxed">Evolución del código hacia el paradigma Clean Core
+                    mediante SAP RAP. Exposición de lógica de negocio limpia vía OData y Fiori Elements.</p>
             </div>
             <div class="p-8 bg-[#1e293b] rounded-2xl border border-gray-800 hover:border-blue-500/50 transition group">
                 <div class="text-blue-500 mb-4 group-hover:scale-110 transition-transform"><i
                         class="fas fa-brain fa-2x"></i></div>
                 <h3 class="font-bold text-xl text-white mb-3">Arquitectura de IA</h3>
-                <p class="text-sm text-gray-400 leading-relaxed">Diseño e implementación de sistemas RAG locales y agentes autónomos utilizando frameworks modernos como LangChain y Model Context Protocol (MCP).</p>
+                <p class="text-sm text-gray-400 leading-relaxed">Diseño e implementación de sistemas RAG locales y
+                    agentes autónomos utilizando frameworks modernos como LangChain y Model Context Protocol (MCP).</p>
             </div>
             <div class="p-8 bg-[#1e293b] rounded-2xl border border-gray-800 hover:border-blue-500/50 transition group">
                 <div class="text-blue-500 mb-4 group-hover:scale-110 transition-transform"><i
                         class="fas fa-cogs fa-2x"></i></div>
                 <h3 class="font-bold text-xl text-white mb-3">Eficiencia Operativa</h3>
-                <p class="text-sm text-gray-400 leading-relaxed">Optimización de servicios AMS mediante la automatización de procesos críticos y scripts avanzados en Python, asegurando la continuidad operacional.</p>
+                <p class="text-sm text-gray-400 leading-relaxed">Optimización de servicios AMS mediante la
+                    automatización de procesos críticos y scripts avanzados en Python, asegurando la continuidad
+                    operacional.</p>
             </div>
         </div>
     </section>
@@ -77,7 +90,10 @@
                     <div class="p-8">
                         <span class="text-xs font-black text-blue-500 uppercase tracking-widest">IA & RAG</span>
                         <h3 class="text-2xl font-bold text-white mt-3 mb-4">Laboratorio RAG Local</h3>
-                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Desarrollo de un ecosistema RAG local optimizado para entornos de hardware restringidos. Solución diseñada mediante la compilación a medida de componentes de inferencia y orquestación con herramientas agénticas, garantizando la soberanía de los datos.</p>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Desarrollo de un ecosistema RAG local
+                            optimizado para entornos de hardware restringidos. Solución diseñada mediante la compilación
+                            a medida de componentes de inferencia y orquestación con herramientas agénticas,
+                            garantizando la soberanía de los datos.</p>
                         <a href="https://github.com/linares-it/demo-laboratorio-rag-langchain"
                             class="inline-flex items-center text-blue-400 font-bold text-sm hover:text-blue-300 transition">
                             EXPLORAR REPOSITORIO <i class="fas fa-arrow-right ml-2"></i>
@@ -116,11 +132,58 @@
             </div>
         </div>
     </section>
- <section>
-    <dashboard-sap></dashboard-sap>   
- </section>
+    <section id="dashboard-sap">
+        <dashboard-sap></dashboard-sap>
+    </section>
 
-    <!-- ✅ SECCIÓN CONTACTO — Layout dos columnas max-w-5xl -->
+    <section id="stack-tecnologico" class="py-20 bg-[#0f172a]">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-10">Stack Tecnológico</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <h3 class="font-semibold text-lg mb-4 text-blue-600">SAP</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>ABAP & RAP</li>
+                        <li>S/4HANA</li>
+                        <li>Clean Core</li>
+                        <li>OData Services</li>
+                        <li>Fiori Elements & Launchpad</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <h3 class="font-semibold text-lg mb-4 text-green-600">Inteligencia Artificial</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>LangChain & RAG</li>
+                        <li>Modelos Locales (Llama 3.2, Gemma)</li>
+                        <li>Agentes Autónomos (MCP)</li>
+                        <li>Visión Computacional</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <h3 class="font-semibold text-lg mb-4 text-purple-600">Desarrollo</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>Python</li>
+                        <li>JavaScript / TypeScript</li>
+                        <li>FastAPI</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <h3 class="font-semibold text-lg mb-4 text-orange-600">Herramientas & DevOps</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>Docker</li>
+                        <li>Git + GitHub</li>
+                        <li>Aider (AI Coding)</li>
+                        <li>Spec-Driven Development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section> <!-- ✅ SECCIÓN CONTACTO — Layout dos columnas max-w-5xl -->
     <section id="contacto" class="py-20 bg-gradient-to-b from-[#0f172a] to-[#1e293b] border-t border-gray-800">
         <div class="max-w-5xl mx-auto px-6">
 
@@ -133,7 +196,8 @@
                 <!-- Columna izquierda — info -->
                 <div>
                     <p class="text-gray-400 text-lg leading-relaxed mb-10">
-                       Encuéntrame en mis redes sociales o envíame un correo electrónico desde el formulario de esta página.
+                        Encuéntrame en mis redes sociales o envíame un correo electrónico desde el formulario de esta
+                        página.
                     </p>
 
                     <div class="space-y-6">
@@ -217,7 +281,7 @@
         </div>
     </footer>
 
-    <script>
+     <script>
         const form = document.getElementById('contact-form');
         const status = document.getElementById('form-status');
         form.addEventListener('submit', async (e) => {
@@ -231,9 +295,6 @@
             }
         });
     </script>
-
-    
-   <script type="module" src="src/components/DashboardSAP.js"></script>
 
 </body>
 
