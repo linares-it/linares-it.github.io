@@ -10,7 +10,6 @@ jobs:
 update-gist:
 runs-on: ubuntu-latest
 
-```
 steps:
   - uses: actions/checkout@v4
 
@@ -109,4 +108,4 @@ steps:
               print(f"❌ Error {response.status_code}: {response.text}")
               exit(1)
           PYEOF
-```
+
