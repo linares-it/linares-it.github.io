@@ -1,6 +1,6 @@
 // src/components/DashboardSAP.js
 
-import { ENDPOINT_FIREBASE } from "../mocks/mockFirebase.js";
+import { GistService } from "../services/gist.service.js";
 
 // Carga UI5 Web Components via bundle comunitario (no requiere bundler)
 import "https://ui5-community.github.io/ui5-webcomponents-bundle/assets/bundle.esm.js";
@@ -15,9 +15,9 @@ class DashboardSAP extends HTMLElement {
         this.shadowRoot.innerHTML = this._loading();
         try {
             const [pRes, kRes, aRes] = await Promise.all([
-                ENDPOINT_FIREBASE.getProjects(),
-                ENDPOINT_FIREBASE.getKPIs(),
-                ENDPOINT_FIREBASE.getAlerts(),
+                GistService.getProjects(),
+                GistService.getKPIs(),
+                GistService.getAlerts(),
             ]);
             if (!pRes.ok) throw new Error(pRes.error);
             this.render(pRes.data, kRes.data, aRes.data);
@@ -107,8 +107,8 @@ class DashboardSAP extends HTMLElement {
                     <div class="kpi-value">${kpis.avgProgress}<span class="kpi-unit">%</span></div>
                 </div>
                 <div class="kpi-card">
-                    <div class="kpi-label">Presupuesto Usado</div>
-                    <div class="kpi-value">${kpis.budgetUsedPct}<span class="kpi-unit">%</span></div>
+                    <div class="kpi-label">Sin Push +90d</div>
+                    <div class="kpi-value" style="color:#f59e0b">${projects.filter(p => p.daysSincePush > 90).length}</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Alertas Activas</div>
@@ -124,7 +124,7 @@ class DashboardSAP extends HTMLElement {
                     <ui5-table-header-cell>Responsable</ui5-table-header-cell>
                     <ui5-table-header-cell>Estado</ui5-table-header-cell>
                     <ui5-table-header-cell>Progreso</ui5-table-header-cell>
-                    <ui5-table-header-cell>Presupuesto</ui5-table-header-cell>
+                    <ui5-table-header-cell>Último Push</ui5-table-header-cell>
                 </ui5-table-header-row>
 
                 ${projects.map(p => `
@@ -143,7 +143,7 @@ class DashboardSAP extends HTMLElement {
                         </ui5-progress-indicator>
                     </ui5-table-cell>
                     <ui5-table-cell>
-                        <ui5-label>$${p.spent.toLocaleString()} / $${p.budget.toLocaleString()}</ui5-label>
+                        <ui5-label>${p.daysSincePush === 999 ? 'Sin actividad' : p.daysSincePush === 0 ? 'Hoy' : `Hace ${p.daysSincePush} días`}</ui5-label>
                     </ui5-table-cell>
                 </ui5-table-row>`).join('')}
             </ui5-table>

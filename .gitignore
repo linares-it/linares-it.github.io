@@ -1,13 +1,19 @@
-# Aider Chat Context & History
-.aider.input.history
-.aider.tags.cache*/
-.aider*
-.aider.input.history
-.aider.tags.cache.v3
-.aider.input.history
-.aider.tags.cache.v3
+# Control de versiones (evita copiar todo el historial de Git)
+.git/
+.gitignore
 
+# Entornos y secretos
 .env
+.venv/
+venv/
+env/
+
+# Cachés de Python y herramientas
 __pycache__/
 *.pyc
+*.pyo
 .pytest_cache/
+.ruff_cache/
+
+# Archivos de Aider
+.aider*

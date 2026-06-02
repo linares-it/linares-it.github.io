@@ -3,6 +3,19 @@ repos:
     hooks:
       - id: docker-quality
         name: Docker Quality Checks
-        entry: bash -c 'docker build -t linares-it-quality test/python && docker run --rm -v "$(pwd)":/app linares-it-quality bash test/python/run_quality.sh'
+        entry: bash -c 'docker build -t linares-it-quality -f test/python/Dockerfile . && docker run --rm linares-it-quality bash test/python/run_quality.sh'
         language: system
-        pass_filenames: false 
+        pass_filenames: false
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-yaml
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.15.15
+    hooks:
+      # Run the linter.
+      - id: ruff-check
+        args: [ --fix ]
+      # Run the formatter.
+      - id: ruff-format

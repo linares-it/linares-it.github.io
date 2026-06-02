@@ -1,9 +1,8 @@
-#import pytest
+# import pytest
 from conftest import calc_health, calc_status, calc_progress, build_project
 
 
 class TestCalcHealth:
-
     def test_green_when_recent_push_and_few_issues(self):
         assert calc_health(days_since=4, open_issues=1) == "green"
 
@@ -31,7 +30,6 @@ class TestCalcHealth:
 
 
 class TestCalcStatus:
-
     def test_active_within_7_days(self):
         assert calc_status(7) == "active"
 
@@ -45,7 +43,6 @@ class TestCalcStatus:
 
 
 class TestCalcProgress:
-
     def test_full_progress_no_issues(self):
         assert calc_progress(open_issues=0, stars=10) == 100
 
@@ -63,7 +60,6 @@ class TestCalcProgress:
 
 
 class TestBuildProject:
-
     def test_green_repo(self, repo_active, now):
         p = build_project(repo_active, 1, now)
         assert p["health"] == "green"
