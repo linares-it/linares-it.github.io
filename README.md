@@ -86,3 +86,17 @@ aider --architect --model gemini/gemini-3-flash-preview --editor-model gemini/ge
 
 ## Flujo: 
 Lee PRD → Entiende alcance → Consulta main.spec.md → Respeta agent.md → Ejecuta cambios.
+
+# Ejecutar test manual
+
+```bash
+
+    docker run --rm repo-test pytest -v
+
+    docker run --rm repo-test ruff check .
+
+    docker run --rm repo-test pip-audit
+
+```    
+
+

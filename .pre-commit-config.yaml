@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: docker-quality
+        name: Docker Quality Checks
+        entry: bash -c 'docker build -t linares-it-quality test/python && docker run --rm -v "$(pwd)":/app linares-it-quality bash test/python/run_quality.sh'
+        language: system
+        pass_filenames: false 
