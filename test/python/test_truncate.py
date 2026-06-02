@@ -1,9 +1,8 @@
-#import pytest
+# import pytest
 from conftest import truncate
 
 
 class TestTruncate:
-
     def test_short_text_unchanged(self):
         assert truncate("Hola mundo", 60) == "Hola mundo"
 
@@ -12,7 +11,9 @@ class TestTruncate:
         assert truncate(text, 60) == text
 
     def test_long_text_truncated_with_ellipsis(self):
-        result = truncate("palabra1 palabra2 palabra3 palabra4 palabra5 palabra6 palabra7", 40)
+        result = truncate(
+            "palabra1 palabra2 palabra3 palabra4 palabra5 palabra6 palabra7", 40
+        )
         assert result.endswith("…")
         assert len(result) <= 41  # 40 chars + "…"
 

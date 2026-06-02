@@ -1,17 +1,17 @@
 import pytest
 from datetime import datetime, timezone, timedelta
 
-
 # ── helpers extraídos del script principal ──────────────────────────────────
+
 
 def truncate(text, max_chars=60):
     if len(text) <= max_chars:
         return text
-    return text[:max_chars].rsplit(' ', 1)[0] + '…'
+    return text[:max_chars].rsplit(" ", 1)[0] + "…"
 
 
 def calc_health(days_since: int, open_issues: int) -> str:
-    if days_since == 999:          # sin pushed_at — repo sin actividad registrada
+    if days_since == 999:  # sin pushed_at — repo sin actividad registrada
         return "red"
     if days_since <= 30 and open_issues < 5:
         return "green"
@@ -47,23 +47,24 @@ def build_project(repo: dict, index: int, now: datetime) -> dict:
     stars = repo["stargazers_count"]
 
     return {
-        "id":            f"REPO-{index:03d}",
-        "title":         truncate(repo.get("description") or repo["name"], 60),
-        "titleFull":     repo.get("description") or repo["name"],
-        "repoName":      repo["name"],
-        "repoUrl":       repo["html_url"],
-        "health":        calc_health(days_since, open_issues),
-        "status":        calc_status(days_since),
-        "progress":      calc_progress(open_issues, stars),
-        "stars":         stars,
-        "openIssues":    open_issues,
+        "id": f"REPO-{index:03d}",
+        "title": truncate(repo.get("description") or repo["name"], 60),
+        "titleFull": repo.get("description") or repo["name"],
+        "repoName": repo["name"],
+        "repoUrl": repo["html_url"],
+        "health": calc_health(days_since, open_issues),
+        "status": calc_status(days_since),
+        "progress": calc_progress(open_issues, stars),
+        "stars": stars,
+        "openIssues": open_issues,
         "daysSincePush": days_since,
-        "language":      repo.get("language") or "—",
-        "owner":         repo["owner"]["login"],
+        "language": repo.get("language") or "—",
+        "owner": repo["owner"]["login"],
     }
 
 
 # ── fixtures ─────────────────────────────────────────────────────────────────
+
 
 @pytest.fixture
 def now():

@@ -11,7 +11,7 @@ jobs:
 quality:
 runs-on: ubuntu-latest
 
-```
+
 steps:
   - uses: actions/checkout@v4
 
@@ -27,4 +27,4 @@ steps:
         -v ${{ github.workspace }}:/app \
         linares-it-quality \
         bash test/python/run_quality.sh
-```
+
