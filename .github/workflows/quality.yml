@@ -1,0 +1,30 @@
+name: Quality
+
+on:
+push:
+branches:
+- main
+
+pull_request:
+
+jobs:
+quality:
+runs-on: ubuntu-latest
+
+```
+steps:
+  - uses: actions/checkout@v4
+
+  - name: Build test container
+    run: |
+      docker build \
+        -t linares-it-quality \
+        test/python
+
+  - name: Run Ruff and Pytest
+    run: |
+      docker run --rm \
+        -v ${{ github.workspace }}:/app \
+        linares-it-quality \
+        bash test/python/run_quality.sh
+```

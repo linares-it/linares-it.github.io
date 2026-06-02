@@ -6,3 +6,8 @@
 .aider.tags.cache.v3
 .aider.input.history
 .aider.tags.cache.v3
+
+.env
+__pycache__/
+*.pyc
+.pytest_cache/

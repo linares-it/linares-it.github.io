@@ -1,31 +1,26 @@
 name: Update project health data
 
 on:
-  schedule:
-    - cron: '0 11 * * *'
-  workflow_dispatch:
+schedule:
+- cron: '0 11 * * *'
+
+workflow_dispatch:
 
 jobs:
-  update-gist:
-    runs-on: ubuntu-latest
-    steps:
-      # ── STEP 1: checkout (necesario para acceder a test/) ──
-      - uses: actions/checkout@v4
+update-gist:
+runs-on: ubuntu-latest
 
-      # ── STEP 2: tests — si falla, se detiene aquí ──
-      - name: Run pytest
-        run: |
-          pip install -r test/python/requirements.txt --quiet
-          pytest test/python/ -v
+```
+steps:
+  - uses: actions/checkout@v4
 
-      # ── STEP 3: solo corre si los tests pasaron ──
-      - name: Generate real health data from GitHub API
-        env:
-          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
-          GIST_ID: ${{ secrets.GIST_ID }}
-          GH_USERNAME: linares-it
-        run: |
-          pip install requests --quiet
+  - name: Generate real health data from GitHub API
+    env:
+      GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+      GIST_ID: ${{ secrets.GIST_ID }}
+      GH_USERNAME: linares-it
+    run: |
+      pip install requests --quiet
           python3 << 'PYEOF'
           import requests, json, os
           from datetime import datetime, timezone
@@ -114,3 +109,4 @@ jobs:
               print(f"❌ Error {response.status_code}: {response.text}")
               exit(1)
           PYEOF
+```
