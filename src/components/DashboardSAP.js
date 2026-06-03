@@ -95,6 +95,10 @@ class DashboardSAP extends HTMLElement {
 
         <section class="section">
             <h2 class="section-title">Dashboard SAP — Fiori</h2>
+            <p class="text-gray-400 text-sm mb-8 max-w-2xl">
+            Gestiono mis proyectos con las mismas herramientas que uso con clientes.
+            Este panel consume datos en tiempo real desde la API de GitHub.
+            </p>
 
             <!-- KPIs -->
             <div class="kpi-grid">
