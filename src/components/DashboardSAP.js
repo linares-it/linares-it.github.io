@@ -48,7 +48,7 @@ class DashboardSAP extends HTMLElement {
     render(projects, kpis, alerts) {
         this.shadowRoot.innerHTML = `
         <style>
-            :host { display: block; font-family: "72", "72full", Arial, Helvetica, sans-serif; }
+            :host { display: block;background: #0f172a; font-family: "72", "72full", Arial, Helvetica, sans-serif; }
             .section { padding: 2rem 1.5rem; background: #0f172a; }
             .section-title {
                 font-size: 1.5rem; font-weight: 700; color: #fff;
