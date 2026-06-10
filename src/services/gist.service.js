@@ -7,17 +7,16 @@
 
 import { ENDPOINT_FIREBASE as MOCK } from "../mocks/mockFirebase.js";
 
-// TODO: reemplazar con tu GIST_ID real o leerlo desde un meta tag / variable de entorno
-const GIST_RAW_URL = "https://gist.githubusercontent.com/linares-it/a8a06976abef25d65744407486b88964/raw/health-data.json";
+const GIST_API_URL = "https://api.github.com/gists/a8a06976abef25d65744407486b88964";
 
-/**
- * Intenta fetch al Gist. Si falla, retorna { ok: false, error }.
- */
 async function fetchGist() {
     try {
-        const res = await fetch(GIST_RAW_URL, { cache: "no-store" });
+        const res = await fetch(GIST_API_URL, {
+            headers: { "Accept": "application/vnd.github+json" }
+        });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = await res.json();
+        const json = await res.json();
+        const data = JSON.parse(json.files["health-data.json"].content);
         return { ok: true, data };
     } catch (err) {
         console.warn("[GistService] Gist no disponible, usando mock.", err.message);
