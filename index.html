@@ -11,12 +11,44 @@
     <meta property="og:description" content="SAP Technical Consultant, Software Architect and AI Engineer">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://linares-it.github.io/">
-    <meta name="version" content="2026.06.10">
+    <meta name="version" content="2026.06.11">
     <meta name="description"
         content="Eduardo Linares Pe&ntilde;ailillo (linares-it). Consultor SAP ABAP Senior especializado en S/4HANA, Clean Core, RAP, OData e Inteligencia Artificial aplicada (RAG, Agentes y IA Local).">
     <title>Eduardo Linares Pe&ntilde;ailillo | linares-it | ERP &amp; AI</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Preconnect: anticipar conexion a CDNs -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://avatars.githubusercontent.com" crossorigin>
+
+    <!-- Preload: imagen LCP (avatar del nav) -->
+    <link rel="preload" href="https://avatars.githubusercontent.com/u/26661814" as="image">
+
+    <!-- Preload + async: Font Awesome (calienta cache para Shadow DOM @import) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+
+    <!-- CSS Critico inline: selectores de elemento para el HTML real -->
+    <style>
+      body{margin:0;background-color:#0f172a;color:#d1d5db;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+      nav{background:rgba(15,23,42,.8);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid #1f2937;position:sticky;top:0;z-index:50}
+      nav>div{max-width:1024px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+      nav>div>a{display:flex;align-items:center}
+      nav>div>a>img{height:40px;width:auto;object-fit:contain}
+      nav>div>div{display:flex;gap:24px;font-size:14px;font-weight:500;align-items:center}
+      nav>div>div>a{color:#9ca3af;text-decoration:none;transition:color .2s}
+      nav>div>div>a:hover{color:#60a5fa}
+      site-hero,especialidades-grid,proyectos-grid,dashboard-sap,stack-grid,contact-section,site-footer,chat-widget{display:block}
+    </style>
+
+    <!-- Tailwind CDN: diferido para no bloquear renderizado -->
+    <script>
+      window.addEventListener('load',function(){
+        var s=document.createElement('script');
+        s.src='https://cdn.tailwindcss.com';
+        document.head.appendChild(s);
+      });
+    </script>
 </head>
 
 <body class="bg-[#0f172a] text-gray-300 font-sans leading-normal">
@@ -24,7 +56,7 @@
     <nav class="bg-[#0f172a]/80 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center">
-                <img src="https://avatars.githubusercontent.com/u/26661814" alt="Linares.it Logo" class="h-10 w-auto object-contain">
+                <img src="https://avatars.githubusercontent.com/u/26661814" alt="Linares.it Logo" class="h-10 w-auto object-contain" width="40" height="40" fetchpriority="high">
             </a>
 
             <div class="space-x-6 text-sm font-medium">
@@ -64,14 +96,14 @@
     <site-footer></site-footer>
     <chat-widget></chat-widget>
 
-    <script type="module" src="src/components/SiteHero.js?v=20260610"></script>
-    <script type="module" src="src/components/EspecialidadesGrid.js?v=20260610"></script>
-    <script type="module" src="src/components/ProyectosGrid.js?v=20260610"></script>
-    <script type="module" src="src/components/DashboardSAP.js?v=20260610"></script>
-    <script type="module" src="src/components/StackGrid.js?v=20260610"></script>
-    <script type="module" src="src/components/ContactSection.js?v=20260610"></script>
-    <script type="module" src="src/components/SiteFooter.js?v=20260610"></script>
-    <script type="module" src="src/components/ChatWidget.js?v=20260610"></script>
+    <script type="module" src="src/components/SiteHero.js?v=20260611"></script>
+    <script type="module" src="src/components/EspecialidadesGrid.js?v=20260611"></script>
+    <script type="module" src="src/components/ProyectosGrid.js?v=20260611"></script>
+    <script type="module" src="src/components/DashboardSAP.js?v=20260611"></script>
+    <script type="module" src="src/components/StackGrid.js?v=20260611"></script>
+    <script type="module" src="src/components/ContactSection.js?v=20260611"></script>
+    <script type="module" src="src/components/SiteFooter.js?v=20260611"></script>
+    <script type="module" src="src/components/ChatWidget.js?v=20260611"></script>
 
     <script type="application/ld+json">
         {

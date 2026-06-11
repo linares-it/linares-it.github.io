@@ -132,7 +132,7 @@ class StackGrid extends HTMLElement {
             <div class="card">
               <div class="card-icon">
                 <img src="https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg/sap-logo-svg.svg"
-                     alt="SAP" class="sap-logo">
+                     alt="SAP" class="sap-logo" width="28" height="28" loading="lazy">
               </div>
               <h3>SAP</h3>
               <p>ABAP &bull; RAP &bull; Clean Core &bull; Fiori Elements &bull; OData &bull; BTP</p>

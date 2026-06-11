@@ -93,11 +93,12 @@ class DashboardSAP extends HTMLElement {
             .dot-low    { background: #22c55e; }
             .alert-msg  { font-size: .875rem; color: #e2e8f0; }
             .alert-time { font-size: .75rem; color: #64748b; margin-top: 2px; }
+            .dash-subtitle{color:#9ca3af;font-size:.875rem;margin:0 0 2rem;max-width:42rem}
         </style>
 
         <section class="section">
             <h2 class="section-title">Dashboard SAP — Fiori</h2>
-            <p class="text-gray-400 text-sm mb-8 max-w-2xl">
+            <p class="dash-subtitle">
             Gestiono mis proyectos con las mismas herramientas que uso con clientes.
             Este panel consume datos en tiempo real desde la API de GitHub.
             </p>
